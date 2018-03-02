@@ -19,13 +19,13 @@ switch mode
         if iscell(Cars)
              TTC = cellfun(@(c,v)  getTTC(c, v, wp), Cars, VRUs, 'UniformOutput', false);
         else
-            TTC = getTTC(Cars, VRUs, CarDim, longInd, longSign);
+            TTC = getTTC(Cars, VRUs, wp);
         end
     case 4
         if iscell(Cars)
             TTC = cellfun(@(c,v,f) getTTC(c, v, wp, f), Cars, VRUs, num2cell(i));
         else
-            TTC = getTTC(Cars, VRUs, CarDim, longInd, longSign, i);
+            TTC = getTTC(Cars, VRUs, wp, i);
         end
 end
 
